@@ -2,7 +2,7 @@
 
 galaxy_info:
   author: Gunter Grodotzki
-  description: Installs git (from source) on Debian-like systems
+  description: Installs ruby (from source) on Debian-like systems
   company: 9JKH (Pty) Ltd.
   license: MIT
   min_ansible_version: 2.4
@@ -17,5 +17,4 @@ galaxy_info:
         - jessie
   galaxy_tags:
     - development
-    - scm
 dependencies: []
