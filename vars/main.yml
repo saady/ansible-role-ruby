@@ -1,0 +1,5 @@
+---
+
+ruby_version_mm: "{{ ruby_version.split('.')[0] }}.{{ ruby_version.split('.')[1] }}"
+
+ruby_version_string_match: ruby {{ ruby_version }}

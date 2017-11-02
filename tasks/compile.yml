@@ -1,0 +1,40 @@
+---
+
+- name: install dependencies
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
+  with_items:
+    - make
+    - gcc
+  become: yes
+
+- name: clear state
+  file:
+    path: /tmp/ruby-{{ ruby_version }}
+    state: absent
+  become: yes
+
+- name: fetch ruby src
+  unarchive:
+    src: https://cache.ruby-lang.org/pub/ruby/{{ ruby_version_mm }}/ruby-{{ ruby_version }}.tar.gz
+    dest: /tmp
+    remote_src: True
+
+- name: configure
+  command: ./configure --disable-install-rdoc
+  args:
+    chdir: /tmp/ruby-{{ ruby_version }}
+
+- name: make
+  command: make
+  args:
+    chdir: /tmp/ruby-{{ ruby_version }}
+
+- name: install
+  command: make install
+  args:
+    chdir: /tmp/ruby-{{ ruby_version }} 
+  become: yes

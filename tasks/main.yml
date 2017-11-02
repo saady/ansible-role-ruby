@@ -1,0 +1,11 @@
+---
+
+- name: get current ruby version
+  command: /usr/local/bin/ruby --version
+  register: ruby_current
+  ignore_errors: yes
+
+- import_tasks: compile.yml
+  when: ruby_current.rc != 0 or not ruby_current.stdout | search(ruby_version_string_match)
+
+- import_tasks: gems.yml
