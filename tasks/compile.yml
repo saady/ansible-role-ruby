@@ -9,6 +9,8 @@
   with_items:
     - make
     - gcc
+    - libssl-dev
+    - openssl
   become: yes
 
 - name: clear state
@@ -29,7 +31,7 @@
     chdir: /tmp/ruby-{{ ruby_version }}
 
 - name: make
-  command: make
+  command: make -j{{ ansible_processor_vcpus }}
   args:
     chdir: /tmp/ruby-{{ ruby_version }}
 
