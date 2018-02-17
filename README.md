@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/lifeofguenter/ansible-role-ruby.svg?branch=master)](https://travis-ci.org/lifeofguenter/ansible-role-ruby)
+[![Build Status](https://travis-ci.org/NINEJKH/ansible-role-ruby.svg?branch=master)](https://travis-ci.org/NINEJKH/ansible-role-ruby)
 
-# lifeofguenter.ruby
+# NINEJKH.ruby
 
 An Ansible role that installs ruby (from source) on Debian-like systems.
 
@@ -11,7 +11,7 @@ none
 ## Role Variables
 
 ```yaml
-ruby_version: 2.3.5
+ruby_version: 2.3.6
 ```
 
 ## Dependencies
@@ -24,7 +24,7 @@ none
 
 - hosts: ruby
   roles:
-    - { role: lifeofguenter.ruby }
+    - { role: NINEJKH.ruby }
 ```
 
 ## License
@@ -33,4 +33,4 @@ Licensed under the MIT License. See the [LICENSE file](LICENSE) for details.
 
 ## Author Information
 
-[Gunter Grodotzki](https://lifeofguenter.de)
+[9JKH (Pty) Ltd.](https://9jkh.co.za)
