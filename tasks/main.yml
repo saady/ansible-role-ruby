@@ -1,5 +1,7 @@
 ---
 
+- include_tasks: dependencies/{{ ansible_distribution_release | lower }}.yml
+
 - name: get current ruby version
   command: /usr/local/bin/ruby --version
   register: ruby_current

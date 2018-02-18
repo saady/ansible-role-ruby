@@ -5,6 +5,9 @@ python: "2.7"
 sudo: required
 dist: trusty
 
+env:
+  - PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/usr/local/sbin
+
 # Install ansible
 addons:
   apt:
@@ -34,6 +37,8 @@ script:
   - ansible-playbook tests/test.yml -i tests/inventory --connection=local
 
   - /usr/local/bin/ruby --version
+
+  - /usr/local/bin/bundle --version
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/

@@ -1,0 +1,21 @@
+---
+
+- name: install dependencies
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
+  with_items:
+    - make
+    - gcc
+    - pkg-config
+    - libssl-dev
+    - libreadline-dev
+    - libgdbm-dev
+    - zlib1g-dev
+    - libyaml-dev
+    - libffi-dev
+    - libgmp-dev
+    - openssl
+  become: yes
