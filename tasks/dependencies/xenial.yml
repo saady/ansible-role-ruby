@@ -10,7 +10,7 @@
     - make
     - gcc
     - pkg-config
-    - libssl1.0-dev
+    - libssl-dev
     - libreadline-dev
     - libgdbm-dev
     - zlib1g-dev
